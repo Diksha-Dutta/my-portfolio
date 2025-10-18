@@ -1,11 +1,11 @@
 "use client";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim"; // ✅ use slim instead of full
+import { loadSlim } from "tsparticles-slim"; 
 
 export default function ParticlesBackground() {
   const particlesInit = useCallback(async (engine) => {
-    // load the slim package → smaller bundle
+
     await loadSlim(engine);
   }, []);
 
@@ -16,8 +16,8 @@ export default function ParticlesBackground() {
       options={{
         fullScreen: { enable: true, zIndex: -1 },
         particles: {
-          number: { value: 60, density: { enable: true, area: 800 } },
-          color: { value: ["#C08081", "#AB4E52", "#ffffff"] }, // ✨ match your brand
+          number: { value: 30, density: { enable: true, area: 800 } },
+          color: { value: ["#C08081", "#AB4E52", "#ffffff"] }, 
           shape: { type: "circle" },
           opacity: { value: 0.6 },
           size: { value: { min: 1, max: 3 } },

@@ -11,7 +11,7 @@ export default function ParticleBackground() {
       }}
       transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
       style={{
-        background: "linear-gradient(135deg, #F1DDCF, #EDCDC2, #EFDECD)",
+        background: "radial-gradient(90deg, #FFFFFF 0%, #FFF0F5 50%, #FFFFFF 100%)",
         backgroundSize: "400% 400%",
       }}
     />

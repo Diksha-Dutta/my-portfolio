@@ -19,6 +19,10 @@ export default function Experience() {
         { icon: <FaDatabase className="text-blue-600 text-xl" />, name: "JDBC" },
         { icon: <FaDatabase className="text-gray-500 text-xl" />, name: "SQL" },
       ],
+      colorFrom: "#22c55e",
+      colorTo: "#059669",
+      gradientClass: "from-green-500 to-emerald-600",
+      bgGlow: "rgba(34, 197, 94, 0.2)"
     },
     {
       role: "React Summer Intern",
@@ -32,6 +36,10 @@ export default function Experience() {
         { icon: <FaCss3Alt className="text-blue-700 text-xl" />, name: "CSS" },
         { icon: <FaJs className="text-yellow-400 text-xl" />, name: "JS" },
       ],
+      colorFrom: "#3b82f6",
+      colorTo: "#0891b2",
+      gradientClass: "from-blue-500 to-cyan-600",
+      bgGlow: "rgba(59, 130, 246, 0.2)"
     },
   ];
 
@@ -50,9 +58,44 @@ export default function Experience() {
       style={{ scale, opacity }}
       className="max-w-6xl mx-auto py-20 px-6"
     >
-      <h2 className="text-4xl font-bold text-center mb-16 gradient-text">Work Experience</h2>
+       <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h2
+              className="text-5xl md:text-6xl font-extrabold mb-4 inline-block relative"
+              style={{
+                background: "linear-gradient(135deg, #1a1a1a 0%, #AB4E52 50%, #d85d61 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Work Experience
+              <motion.div
+                className="absolute -bottom-2 left-0 h-1 rounded-full"
+                style={{
+                  background: "linear-gradient(90deg, #AB4E52 0%, #d85d61 100%)",
+                }}
+                initial={{ width: 0 }}
+                animate={inView ? { width: "100%" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
+            </motion.h2>
+            <motion.p
+              className="text-gray-600 mt-6 text-lg"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Building experiences, one project at a time
+            </motion.p>
+          </motion.div>
+        </div>
 
-      {/* Desktop: timeline with hover cards */}
+      
       <div className="hidden md:flex flex-col items-center relative">
         <motion.div
           initial={{ height: 0 }}
@@ -87,7 +130,7 @@ export default function Experience() {
                 <p className="text-sm text-gray-500 italic">{exp.duration}</p>
                 <p className="mt-2 text-gray-700">{exp.desc}</p>
 
-                {/* Desktop skill icons: slide out right on hover */}
+              
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : 20 }}
@@ -107,7 +150,7 @@ export default function Experience() {
         </div>
       </div>
 
-      {/* Mobile: stacked cards with always-visible icons below */}
+      
       <div className="flex flex-col space-y-8 md:hidden">
         {internships.map((exp, i) => (
           <motion.div
@@ -123,7 +166,7 @@ export default function Experience() {
             <p className="text-sm text-gray-500 italic">{exp.duration}</p>
             <p className="mt-2 text-gray-700">{exp.desc}</p>
 
-            {/* Always visible skill icons below card */}
+     
             <div className="mt-4 flex gap-4 justify-center flex-wrap">
               {exp.skills.map((skill, idx) => (
                 <div key={idx} className="flex flex-col items-center gap-1 text-sm font-medium">

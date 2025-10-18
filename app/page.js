@@ -7,7 +7,7 @@ import Experience from './components/Experience';
 
 
 import Skills from './components/Skills';
-import WorkShowcase from './components/WorkShowcase';
+import Work from './components/Work';
 import Contact from './components/Contact';
 import SocialLinks from './components/SocialLinks';
 import Footer from './components/Footer';
@@ -33,7 +33,7 @@ export default function Home() {
       
     
       <Skills />
-      <WorkShowcase />
+      <Work />
       <Contact />
       <SocialLinks />
       <Footer />

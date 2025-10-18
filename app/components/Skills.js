@@ -40,8 +40,8 @@ export default function Skills() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768); // Tailwind md breakpoint
-    handleResize(); // initial check
+    const handleResize = () => setIsMobile(window.innerWidth < 768); 
+    handleResize(); 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -83,11 +83,43 @@ export default function Skills() {
         </motion.div>
       ))}
 
-<div>
-     <h2 className="text-4xl font-bold mb-8 text-center text-[#a74d4d] relative z-20 ">
-    Skills
-  </h2>
-  </div>
+        <div className="text-center mb-12 relative z-20">
+          <motion.h2
+            className="text-5xl md:text-6xl font-extrabold mb-4 inline-block relative"
+            style={{
+              background: "linear-gradient(135deg, #1a1a1a 0%, #AB4E52 50%, #d85d61 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
+          >
+            Skills & Expertise
+            <motion.div
+              className="absolute -bottom-2 left-0 h-1 rounded-full"
+              style={{
+                background: "linear-gradient(90deg, #AB4E52 0%, #d85d61 100%)",
+              }}
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: false }}
+            />
+          </motion.h2>
+          <motion.p
+            className="text-gray-600 mt-6 text-base md:text-lg"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: false }}
+          >
+            Technologies and tools I work with
+          </motion.p>
+        </div>
+
 
        
 <div className="relative z-20 backdrop-blur-md rounded-2xl shadow-xl p-10 lg:max-w-xl md:max-w-sm w-full justify-center">
