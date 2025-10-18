@@ -106,7 +106,7 @@ export default function Contact() {
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
           >
-            Let's Connect
+            Let&apos;s Connect
             <motion.div
               className="absolute -bottom-2 left-0 h-1 rounded-full"
               style={{
@@ -127,7 +127,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: false }}
           >
-            Have a project in mind or just want to chat? I'm always open to
+            Have a project in mind or just want to chat? I&apos;m always open to
             discussing new opportunities, creative ideas, or collaborations.
           </motion.p>
         </div>
@@ -331,7 +331,7 @@ function SuccessMessage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Thank you for reaching out. I'll get back to you as soon as possible.
+          Thank you for reaching out. I&apos;ll get back to you as soon as possible.
         </motion.p>
       </div>
     </motion.div>

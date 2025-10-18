@@ -57,7 +57,7 @@ export default function AboutMe() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              I'm a <span className="font-semibold text-[#AB4E52]">full-stack developer</span> and <span className="font-semibold text-[#AB4E52]">designer</span> passionate about building seamless, human-centered digital experiences. I thrive on blending code and creativity—whether it's clean interfaces, smooth interactions, or playful experiments with 3D and animation. Beyond the screen, you'll often find me singing or getting lost in a good book.
+              I&apos;m a <span className="font-semibold text-[#AB4E52]">full-stack developer</span> and <span className="font-semibold text-[#AB4E52]">designer</span> passionate about building seamless, human-centered digital experiences. I thrive on blending code and creativity—whether it&apos;s clean interfaces, smooth interactions, or playful experiments with 3D and animation. Beyond the screen, you&apos;ll often find me singing or getting lost in a good book.
             </motion.p>
 
           

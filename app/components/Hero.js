@@ -217,7 +217,8 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                Hi, I'm <br /> Diksha Dutta
+                Hi, I&apos;m <br /> Diksha Dutta
+
               </motion.h1>
               
               <motion.p 

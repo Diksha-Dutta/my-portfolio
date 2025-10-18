@@ -1,19 +1,19 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { FaUser, FaStar, FaServicestack, FaBriefcase, FaEnvelope } from "react-icons/fa";
 
-export default function FloatingDotNavbar() {
-  const links = [
-    { name: "About", icon: <FaUser /> },
-    { name: "Experience", icon: <FaStar /> },
-    { name: "Skills", icon: <FaServicestack /> },
-    { name: "Work", icon: <FaBriefcase /> },
-    { name: "Contact", icon: <FaEnvelope /> },
-  ];
 
+const links = [
+  { name: "About", icon: <FaUser /> },
+  { name: "Experience", icon: <FaStar /> },
+  { name: "Skills", icon: <FaServicestack /> },
+  { name: "Work", icon: <FaBriefcase /> },
+  { name: "Contact", icon: <FaEnvelope /> },
+];
+
+export default function FloatingDotNavbar() {
   const [activeSection, setActiveSection] = useState("hero");
 
- 
   useEffect(() => {
     const sections = ["hero", ...links.map((l) => l.name.toLowerCase())];
 
@@ -33,26 +33,21 @@ export default function FloatingDotNavbar() {
     });
 
     return () => observers.forEach((obs) => obs?.disconnect());
-  }, [links]);
-
-
-  const activeLink = links.find(link => link.name.toLowerCase() === activeSection);
+  }, []); 
+  const activeLink = links.find((link) => link.name.toLowerCase() === activeSection);
 
   return (
     <>
-   
+     
       {activeLink && (
         <div className="hidden md:flex fixed top-1/3 left-6 transform -translate-y-1/2 flex-col items-center z-50">
           <a
             href={`#${activeLink.name.toLowerCase()}`}
             className="relative group flex items-center justify-center"
           >
-         
             <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[#AB4E52] text-white transition-transform duration-300 hover:scale-110">
               {activeLink.icon}
             </div>
-
-         
             <span className="absolute left-16 top-1/2 -translate-y-1/2 bg-[#AB4E52] text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               {activeLink.name}
             </span>
@@ -60,15 +55,14 @@ export default function FloatingDotNavbar() {
         </div>
       )}
 
-    
+     
       <nav className="fixed top-0 w-full z-40 bg-[#C08081] backdrop-blur-lg border-b border-[#C08081]/20 text-white shadow-sm md:hidden">
         <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
           <a href="#hero" className="font-bold text-xl px-3 py-2 rounded-md">
             Diksha Dutta
           </a>
 
-      
-          <div className="flex space-x-3 md:hidden">
+          <div className="flex space-x-3">
             {links.map((link) => (
               <a
                 key={link.name}
